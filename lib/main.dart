@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 void main() => runApp(const FieldOpsApp());
@@ -75,7 +76,11 @@ class _ShellState extends State<Shell> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: [const HomeTab(), const JobsTab(), const ProfileTab()][tab],
+        child: Padding(
+          // On web the embedding simulator draws a notch; reserve its inset.
+          padding: EdgeInsets.only(top: kIsWeb ? 44 : 0),
+          child: [const HomeTab(), const JobsTab(), const ProfileTab()][tab],
+        ),
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: tab,
