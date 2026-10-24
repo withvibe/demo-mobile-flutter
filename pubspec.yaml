@@ -1,0 +1,14 @@
+name: fieldops_flutter
+description: FieldOps demo app (Flutter) for WithVibe mobile environments.
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
